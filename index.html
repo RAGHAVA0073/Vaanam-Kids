@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VAANAM KIDS — Little Stories. Big Imaginations.</title>
+
+<meta name="description" content="Vaanam Kids creates magical digital storybooks and creative activities for curious little minds. Little stories. Big imaginations.">
+<meta name="theme-color" content="#050018">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Nunito',sans-serif;
+    background:#030014;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =====================================================
+   SPACE BACKGROUND
+===================================================== */
+
+.space{
+    position:fixed;
+    inset:0;
+    z-index:-20;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(100,45,210,.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(30,80,220,.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(160,40,210,.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #050018 0%,
+            #090027 45%,
+            #02000d 100%
+        );
+}
+
+.stars,
+.stars2,
+.stars3{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background-repeat:repeat;
+}
+
+.stars{
+    background-image:
+        radial-gradient(2px 2px at 5% 12%,#fff,transparent),
+        radial-gradient(1px 1px at 12% 75%,#fff,transparent),
+        radial-gradient(2px 2px at 20% 35%,#fff,transparent),
+        radial-gradient(1px 1px at 28% 80%,#fff,transparent),
+        radial-gradient(2px 2px at 39% 22%,#fff,transparent),
+        radial-gradient(1px 1px at 48% 65%,#fff,transparent),
+        radial-gradient(2px 2px at 57% 12%,#fff,transparent),
+        radial-gradient(1px 1px at 67% 84%,#fff,transparent),
+        radial-gradient(2px 2px at 76% 30%,#fff,transparent),
+        radial-gradient(1px 1px at 88% 72%,#fff,transparent),
+        radial-gradient(2px 2px at 96% 18%,#fff,transparent);
+
+    animation:twinkle 5s infinite alternate;
+}
+
+.stars2{
+    background-image:
+        radial-gradient(1px 1px at 8% 50%,#9bd8ff,transparent),
+        radial-gradient(2px 2px at 17% 18%,#fff,transparent),
+        radial-gradient(1px 1px at 33% 48%,#cba8ff,transparent),
+        radial-gradient(2px 2px at 44% 88%,#fff,transparent),
+        radial-gradient(1px 1px at 61% 37%,#8fd8ff,transparent),
+        radial-gradient(2px 2px at 72% 70%,#fff,transparent),
+        radial-gradient(1px 1px at 84% 12%,#d6b5ff,transparent),
+        radial-gradient(2px 2px at 94% 56%,#fff,transparent);
+
+    animation:twinkle 8s infinite alternate-reverse;
+}
+
+.stars3{
+    background-image:
+        radial-gradient(1px 1px at 3% 90%,#fff,transparent),
+        radial-gradient(1px 1px at 25% 8%,#fff,transparent),
+        radial-gradient(1px 1px at 51% 55%,#fff,transparent),
+        radial-gradient(1px 1px at 70% 20%,#fff,transparent),
+        radial-gradient(1px 1px at 92% 42%,#fff,transparent);
+
+    animation:twinkle 11s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.25;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(1100px,92%);
+
+    padding:12px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(8,4,32,.65);
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:28px;
+
+    z-index:100;
+
+    box-shadow:
+        0 10px 45px rgba(0,0,0,.35);
+}
+
+.logo{
+    font-family:'Baloo 2',sans-serif;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #d7a6ff,
+            #70d8ff,
+            #fff
+        );
+
+    background-size:250% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:logoShine 4s linear infinite;
+}
+
+@keyframes logoShine{
+    to{
+        background-position:250% center;
+    }
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#dcd7f5;
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+
+    text-shadow:
+        0 0 15px #9b5cff;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    padding:140px 20px 90px;
+}
+
+.hero-content{
+    max-width:950px;
+    position:relative;
+    z-index:5;
+}
+
+.eyebrow{
+    display:inline-block;
+
+    padding:8px 19px;
+
+    border:1px solid rgba(177,130,255,.35);
+    border-radius:30px;
+
+    background:rgba(111,49,194,.13);
+
+    color:#d9c6ff;
+
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:2px;
+
+    margin-bottom:27px;
+
+    box-shadow:
+        0 0 30px rgba(126,64,255,.15);
+}
+
+/* =====================================================
+   MASS VAANAM TITLE
+===================================================== */
+
+.hero-title{
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:clamp(75px,14vw,165px);
+
+    line-height:.78;
+
+    font-weight:800;
+
+    letter-spacing:-7px;
+
+    margin-bottom:20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 5%,
+            #e2c4ff 28%,
+            #a85cff 55%,
+            #7040ff 75%,
+            #55d5ff 100%
+        );
+
+    background-size:100% 200%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    filter:
+        drop-shadow(0 0 8px rgba(194,128,255,.9))
+        drop-shadow(0 0 28px rgba(111,61,255,.65))
+        drop-shadow(0 0 65px rgba(76,110,255,.35));
+
+    animation:
+        titleFloat 5s ease-in-out infinite,
+        titleGradient 5s ease-in-out infinite alternate;
+}
+
+@keyframes titleFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+}
+
+@keyframes titleGradient{
+
+    from{
+        background-position:0% 0%;
+    }
+
+    to{
+        background-position:0% 100%;
+    }
+}
+
+.hero-subtitle{
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:clamp(30px,4vw,48px);
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:12px;
+
+    text-shadow:
+        0 0 20px rgba(163,100,255,.7);
+}
+
+.hero-text{
+    max-width:620px;
+
+    margin:auto;
+
+    color:#bdb8d5;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   PLANET
+===================================================== */
+
+.planet{
+    position:absolute;
+
+    width:135px;
+    height:135px;
+
+    border-radius:50%;
+
+    right:8%;
+    top:22%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #e0c6ff,
+            #8039dd 45%,
+            #210a58 100%
+        );
+
+    box-shadow:
+        0 0 30px #814aff,
+        0 0 90px rgba(126,70,255,.55);
+
+    animation:
+        planetFloat 7s ease-in-out infinite;
+}
+
+.planet:before{
+    content:"";
+
+    position:absolute;
+
+    width:195px;
+    height:52px;
+
+    border:
+        3px solid rgba(202,166,255,.6);
+
+    border-radius:50%;
+
+    top:41px;
+    left:-30px;
+
+    transform:rotate(-18deg);
+
+    box-shadow:
+        0 0 20px rgba(166,100,255,.4);
+}
+
+@keyframes planetFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(8deg);
+    }
+}
+
+/* =====================================================
+   MOON
+===================================================== */
+
+.moon{
+    position:absolute;
+
+    width:88px;
+    height:88px;
+
+    border-radius:50%;
+
+    left:8%;
+    top:32%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #aaa7c7
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,.25);
+
+    animation:
+        moonFloat 8s ease-in-out infinite;
+}
+
+.moon:after{
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#89869f;
+
+    border-radius:50%;
+
+    top:20px;
+    left:25px;
+
+    box-shadow:
+        30px 25px 0 7px #9996b0,
+        10px 45px 0 3px #aaa7be;
+
+    opacity:.45;
+}
+
+@keyframes moonFloat{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(15px,-20px);
+    }
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+
+    padding:14px 27px;
+
+    border-radius:40px;
+
+    font-weight:800;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    transition:.35s;
+}
+
+.primary{
+    color:white;
+
+    background:
+        linear-gradient(
+            100deg,
+            #7540ff,
+            #b04cff,
+            #3d9dff
+        );
+
+    box-shadow:
+        0 0 20px rgba(132,65,255,.45),
+        0 10px 30px rgba(0,0,0,.3);
+}
+
+.primary:hover{
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 0 35px rgba(145,77,255,.75),
+        0 15px 40px rgba(0,0,0,.4);
+}
+
+.secondary{
+    color:#ddd5ff;
+
+    border:
+        1px solid rgba(255,255,255,.16);
+
+    background:
+        rgba(255,255,255,.04);
+}
+
+.secondary:hover{
+    background:
+        rgba(255,255,255,.09);
+
+    transform:
+        translateY(-4px);
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+    position:relative;
+    padding:110px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    font-family:'Baloo 2',sans-serif;
+
+    text-align:center;
+
+    font-size:
+        clamp(38px,6vw,65px);
+
+    line-height:1;
+
+    margin-bottom:15px;
+}
+
+.section-title span{
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #b784ff,
+            #67d9ff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.section-desc{
+    text-align:center;
+
+    max-width:650px;
+
+    margin:
+        0 auto 55px;
+
+    color:#aaa5c5;
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   BOOKS
+===================================================== */
+
+.books{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.book{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:12px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.book:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(178,120,255,.5);
+
+    box-shadow:
+        0 20px 60px rgba(72,26,151,.3);
+}
+
+.book-cover{
+
+    height:290px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.space-cover{
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #7351ff,
+            #1b0b4f 45%,
+            #050014 100%
+        );
+}
+
+.farm-cover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #89d9ff,
+            #d8f4ff 48%,
+            #8bd66e 49%,
+            #45a957
+        );
+}
+
+.future-cover{
+
+    background:
+        radial-gradient(
+            circle,
+            #933cff,
+            #13062f 65%
+        );
+}
+
+.book-cover h3{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:31px;
+
+    line-height:1;
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.5);
+
+    z-index:2;
+}
+
+.cover-planet{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(255,255,255,.45)
+        );
+
+    animation:
+        spinPlanet 12s linear infinite;
+}
+
+@keyframes spinPlanet{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.book-info{
+
+    padding:
+        20px 12px 12px;
+}
+
+.book-info h3{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:25px;
+}
+
+.book-info p{
+
+    color:#aaa5c5;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin:
+        7px 0 15px;
+}
+
+.book-bottom{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.price{
+
+    font-weight:800;
+
+    font-size:18px;
+}
+
+.small-btn{
+
+    padding:
+        9px 17px;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7645ff,
+            #a74cff
+        );
+}
+
+/* =====================================================
+   PARENT SECTION
+===================================================== */
+
+.parent-section{
+    margin-top:50px;
+}
+
+.parent-box{
+
+    position:relative;
+
+    padding:
+        70px 40px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(115,65,255,.3),
+            transparent 55%
+        ),
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+}
+
+.parent-box h2{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:
+        clamp(38px,6vw,62px);
+
+    margin-bottom:18px;
+
+    line-height:1;
+}
+
+.parent-box p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    color:#bdb8d5;
+
+    line-height:1.9;
+
+    font-size:17px;
+}
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.feature{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.feature:hover{
+
+    transform:
+        translateY(-7px);
+
+    background:
+        rgba(129,75,255,.08);
+}
+
+.feature-icon{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+}
+
+.feature h3{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:23px;
+
+    margin-bottom:8px;
+}
+
+.feature p{
+
+    color:#aaa5c5;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+/* =====================================================
+   CONTACT / ORDERS
+===================================================== */
+
+.contact-section{
+
+    padding-top:70px;
+
+    padding-bottom:110px;
+}
+
+.contact-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+}
+
+.contact-item{
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.contact-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:
+        rgba(125,65,255,.15);
+
+    filter:blur(60px);
+
+    border-radius:50%;
+
+    top:-90px;
+
+    right:-70px;
+}
+
+.contact-item:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(177,120,255,.45);
+
+    box-shadow:
+        0 20px 60px rgba(74,30,150,.3);
+}
+
+.contact-icon{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+}
+
+.contact-item h3{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:27px;
+
+    margin-bottom:8px;
+}
+
+.contact-item p{
+
+    color:#aaa5c5;
+
+    line-height:1.7;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+}
+
+.contact-btn{
+
+    display:inline-block;
+
+    padding:
+        11px 19px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7040ff,
+            #a74cff
+        );
+
+    box-shadow:
+        0 0 20px rgba(123,65,255,.25);
+
+    transition:.3s;
+}
+
+.contact-btn:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(144,76,255,.55);
+}
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.cta{
+
+    text-align:center;
+
+    padding-bottom:130px;
+}
+
+.cta h2{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:
+        clamp(45px,7vw,80px);
+
+    line-height:1;
+}
+
+.cta p{
+
+    color:#aaa5c5;
+
+    margin:
+        18px auto 30px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#77728f;
+
+    font-size:13px;
+}
+
+.footer-logo{
+
+    font-family:'Baloo 2',sans-serif;
+
+    font-size:25px;
+
+    font-weight:800;
+
+    color:#c9a7ff;
+
+    margin-bottom:7px;
+}
+
+/* =====================================================
+   SHOOTING STARS
+===================================================== */
+
+.shooting-star{
+
+    position:absolute;
+
+    width:110px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            transparent
+        );
+
+    transform:rotate(-35deg);
+
+    opacity:0;
+
+    animation:
+        shoot 6s linear infinite;
+}
+
+.s1{
+
+    top:20%;
+    left:-10%;
+
+    animation-delay:1s;
+}
+
+.s2{
+
+    top:55%;
+    left:-10%;
+
+    animation-delay:4s;
+}
+
+@keyframes shoot{
+
+    0%{
+        transform:
+            translate(0,0)
+            rotate(-35deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    30%{
+        transform:
+            translate(600px,350px)
+            rotate(-35deg);
+
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .hero-title{
+        letter-spacing:-4px;
+    }
+
+    .planet{
+
+        width:75px;
+        height:75px;
+
+        right:4%;
+        top:20%;
+    }
+
+    .planet:before{
+
+        width:110px;
+        height:32px;
+
+        left:-18px;
+        top:22px;
+    }
+
+    .moon{
+
+        width:55px;
+        height:55px;
+
+        left:4%;
+    }
+
+    .books,
+    .features{
+
+        grid-template-columns:1fr;
+
+        max-width:480px;
+
+        margin:auto;
+    }
+
+    .contact-card{
+
+        grid-template-columns:1fr;
+
+        max-width:480px;
+    }
+
+    section{
+
+        padding:
+            80px 18px;
+    }
+
+    .parent-box{
+
+        padding:
+            50px 25px;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero{
+
+        padding-top:150px;
+    }
+
+    .eyebrow{
+
+        font-size:10px;
+
+        letter-spacing:1.5px;
+    }
+
+    .hero-title{
+
+        font-size:72px;
+
+        letter-spacing:-4px;
+    }
+
+    .hero-subtitle{
+
+        font-size:27px;
+    }
+
+    .hero-text{
+
+        font-size:15px;
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .btn{
+
+        width:220px;
+    }
+
+    .book-cover{
+
+        height:260px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SPACE BACKGROUND
+===================================================== -->
+
+<div class="space">
+
+    <div class="stars"></div>
+
+    <div class="stars2"></div>
+
+    <div class="stars3"></div>
+
+    <div class="shooting-star s1"></div>
+
+    <div class="shooting-star s2"></div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="nav">
+
+    <div class="logo">
+        ✦ VAANAM KIDS
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#books">
+            Books
+        </a>
+
+        <a href="#parents">
+            For Parents
+        </a>
+
+        <a href="#why">
+            Why Vaanam?
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="planet"></div>
+
+    <div class="moon"></div>
+
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+
+            ✦ WELCOME TO THE VAANAM UNIVERSE ✦
+
+        </div>
+
+
+        <h1 class="hero-title">
+
+            VAANAM
+
+        </h1>
+
+
+        <div class="hero-subtitle">
+
+            KIDS 🚀
+
+        </div>
+
+
+        <p class="hero-text">
+
+            Magical little stories, creative activities
+            and big adventures made for curious little minds.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#books"
+                class="btn primary">
+
+                🚀 Explore Books
+
+            </a>
+
+
+            <a
+                href="#parents"
+                class="btn secondary">
+
+                ✨ Discover Vaanam
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     BOOKS
+===================================================== -->
+
+<section id="books">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            <span>
+                Explore Our Universe
+            </span>
+
+            🌌
+
+        </h2>
+
+
+        <p class="section-desc">
+
+            Stories and activities designed to make
+            reading, imagination and parent-child moments
+            a little more magical.
+
+        </p>
+
+
+        <div class="books">
+
+
+            <!-- BOOK 1 -->
+
+            <article class="book">
+
+
+                <div class="book-cover space-cover">
+
+
+                    <div class="cover-planet">
+
+                        🪐
+
+                    </div>
+
+
+                    <h3>
+
+                        Pluto<br>
+                        &amp; The Planets
+
+                    </h3>
+
+
+                </div>
+
+
+                <div class="book-info">
+
+
+                    <h3>
+
+                        🚀 Pluto and the Planets
+
+                    </h3>
+
+
+                    <p>
+
+                        A magical journey through our cosmic
+                        neighbourhood for curious little explorers.
+
+                    </p>
+
+
+                    <div class="book-bottom">
+
+
+                        <span class="price">
+
+                            $3.99
+
+                        </span>
+
+
+                        <a
+                            href="https://raghava06.gumroad.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="small-btn">
+
+                            Explore →
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOOK 2 -->
+
+            <article class="book">
+
+
+                <div class="book-cover farm-cover">
+
+
+                    <div class="cover-planet">
+
+                        🐮
+
+                    </div>
+
+
+                    <h3>
+
+                        My Little<br>
+                        Farm
+
+                    </h3>
+
+
+                </div>
+
+
+                <div class="book-info">
+
+
+                    <h3>
+
+                        🌱 My Little Farm
+
+                    </h3>
+
+
+                    <p>
+
+                        A fun colouring adventure with friendly
+                        farm animals and big, simple shapes.
+
+                    </p>
+
+
+                    <div class="book-bottom">
+
+
+                        <span class="price">
+
+                            Coming Soon
+
+                        </span>
+
+
+                        <span class="small-btn">
+
+                            Soon ✨
+
+                        </span>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOOK 3 -->
+
+            <article class="book">
+
+
+                <div class="book-cover future-cover">
+
+
+                    <div class="cover-planet">
+
+                        🌙
+
+                    </div>
+
+
+                    <h3>
+
+                        More Little<br>
+                        Adventures
+
+                    </h3>
+
+
+                </div>
+
+
+                <div class="book-info">
+
+
+                    <h3>
+
+                        🌙 More Adventures
+
+                    </h3>
+
+
+                    <p>
+
+                        New stories, activities and imaginative
+                        adventures are coming to the Vaanam universe.
+
+                    </p>
+
+
+                    <div class="book-bottom">
+
+
+                        <span class="price">
+
+                            Coming Soon
+
+                        </span>
+
+
+                        <span class="small-btn">
+
+                            Soon ✨
+
+                        </span>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PARENTS
+===================================================== -->
+
+<section
+    id="parents"
+    class="parent-section">
+
+
+    <div class="container">
+
+
+        <div class="parent-box">
+
+
+            <h2>
+
+                A little story<br>
+                can become a big memory. ❤️
+
+            </h2>
+
+
+            <p>
+
+                Today, children are growing up surrounded by screens.
+                Vaanam Kids gives families a simple alternative —
+                a story to share, a page to turn and a little moment
+                to enjoy together.
+
+                <br><br>
+
+                Sit together.
+                Read together.
+                Imagine together.
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="#books"
+                    class="btn primary">
+
+                    📖 Find a Story
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY VAANAM
+===================================================== -->
+
+<section id="why">
+
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            <span>
+                Why Vaanam Kids?
+            </span>
+
+            ✨
+
+        </h2>
+
+
+        <p class="section-desc">
+
+            More than a digital download —
+            we want every little story to create
+            a moment worth remembering.
+
+        </p>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+
+                <div class="feature-icon">
+
+                    📖
+
+                </div>
+
+
+                <h3>
+
+                    Story First
+
+                </h3>
+
+
+                <p>
+
+                    Simple, engaging stories created
+                    to keep young minds curious and
+                    excited to turn the page.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="feature">
+
+
+                <div class="feature-icon">
+
+                    🌈
+
+                </div>
+
+
+                <h3>
+
+                    Made for Little Minds
+
+                </h3>
+
+
+                <p>
+
+                    Friendly visuals, simple ideas and
+                    playful activities designed around
+                    children's imagination.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="feature">
+
+
+                <div class="feature-icon">
+
+                    👨‍👩‍👧
+
+                </div>
+
+
+                <h3>
+
+                    Read Together
+
+                </h3>
+
+
+                <p>
+
+                    Created to encourage meaningful
+                    parent-child reading moments beyond
+                    another screen.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT & ORDERS
+===================================================== -->
+
+<section
+    id="contact"
+    class="contact-section">
+
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            <span>
+                Contact &amp; Orders
+            </span>
+
+            🌙
+
+        </h2>
+
+
+        <p class="section-desc">
+
+            Questions about our books, orders or digital
+            products? We're happy to help. ✨
+
+        </p>
+
+
+        <div class="contact-card">
+
+
+            <!-- GUMROAD -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    🛍️
+
+                </div>
+
+
+                <h3>
+
+                    Orders &amp; Products
+
+                </h3>
+
+
+                <p>
+
+                    Visit our Gumroad store to explore
+                    Vaanam Kids digital books and place
+                    your order.
+
+                </p>
+
+
+                <a
+                    href="https://raghava06.gumroad.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn">
+
+                    Visit Gumroad Store →
+
+                </a>
+
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    📩
+
+                </div>
+
+
+                <h3>
+
+                    Contact Us
+
+                </h3>
+
+
+                <p>
+
+                    Have a question or need help with
+                    your order? Send us an email.
+
+                </p>
+
+
+                <a
+                    href="mailto:raghava0317@gmail.com"
+                    class="contact-btn">
+
+                    Email Vaanam Kids →
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="cta">
+
+
+    <div class="container">
+
+
+        <h2>
+
+            Ready to explore? 🚀
+
+        </h2>
+
+
+        <p>
+
+            Pick a story.
+            Start imagining.
+            Enter the Vaanam universe.
+
+        </p>
+
+
+        <a
+            href="https://raghava06.gumroad.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn primary">
+
+            🌌 Enter Vaanam Kids
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        ✦ VAANAM KIDS
+
+    </div>
+
+
+    <div>
+
+        Little stories.
+        Big imaginations. ✨
+
+    </div>
+
+
+    <br>
+
+
+    <div>
+
+        © 2026 Vaanam Kids.
+        All rights reserved.
+
+    </div>
+
+
+</footer>
+
+
+</body>
+</html>
